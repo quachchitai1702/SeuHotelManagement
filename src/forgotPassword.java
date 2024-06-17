@@ -39,12 +39,12 @@ public class forgotPassword extends javax.swing.JFrame {
         emailTxt = new javax.swing.JTextField();
         questionTxt = new javax.swing.JTextField();
         answerTxt = new javax.swing.JTextField();
-        newPasswordText = new javax.swing.JTextField();
         searchBtn = new javax.swing.JButton();
         saveBtn = new javax.swing.JButton();
         signupBtn = new javax.swing.JButton();
         loginBtn = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        passwordTxt = new javax.swing.JPasswordField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -94,9 +94,6 @@ public class forgotPassword extends javax.swing.JFrame {
         answerTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(answerTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 400, -1));
 
-        newPasswordText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(newPasswordText, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 400, -1));
-
         searchBtn.setBackground(new java.awt.Color(0, 0, 204));
         searchBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         searchBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,6 +109,11 @@ public class forgotPassword extends javax.swing.JFrame {
         saveBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         saveBtn.setForeground(new java.awt.Color(255, 255, 255));
         saveBtn.setText("Save");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, 75, -1));
 
         signupBtn.setBackground(new java.awt.Color(0, 0, 204));
@@ -131,9 +133,13 @@ public class forgotPassword extends javax.swing.JFrame {
         loginBtn.setText("Login");
         getContentPane().add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, 75, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgot password.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        passwordTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        passwordTxt.setText("jPasswordField1");
+        getContentPane().add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 400, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgot password.png"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,6 +186,44 @@ public class forgotPassword extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_signupBtnActionPerformed
 
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        // TODO add your handling code here:
+        int check=0;
+        String securityQuestion=questionTxt.getText();  
+        String answer = answerTxt.getText();
+        String newPassword = passwordTxt.getText();
+        if (answer.equals("")||newPassword.equals(""))
+        {
+            check=1;
+            JOptionPane.showMessageDialog( null , "All Field Is Require");
+            
+        }
+        else
+        {
+            ResultSet rs = Select.getData("select *from users where email='"+email+"' and securityQuestion='"+securityQuestion+"' and answer='"+answer+"'");
+            try
+            {
+                if (rs.next())
+                {
+                    check=1;
+                    InsertUpdateDelete.setData("update users set password='"+newPassword+"' where email='"+email+"'", "Password Set Successfully");
+                    setVisible(false);
+                    new forgotPassword().setVisible(true);
+                    
+                }
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }   
+        if (check==0)
+        {
+            JOptionPane.showMessageDialog(null, "Incorrect Answer ");
+        }
+        
+    }//GEN-LAST:event_saveBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -224,9 +268,9 @@ public class forgotPassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton loginBtn;
-    private javax.swing.JTextField newPasswordText;
+    private javax.swing.JPasswordField passwordTxt;
     private javax.swing.JTextField questionTxt;
     private javax.swing.JButton saveBtn;
     private javax.swing.JButton searchBtn;
