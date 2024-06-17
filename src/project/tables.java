@@ -18,7 +18,7 @@ public class tables {
        {
            con=(Connection) ConnectionProvider.getCon();
            st=con.createStatement();
-           st.execute("create table users("
+           st.executeUpdate("create table users("
                    + "name varchar(200),"
                    + "email varchar(200),"
                    + "password varchar(50), "
