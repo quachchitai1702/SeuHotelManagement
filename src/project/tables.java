@@ -18,14 +18,22 @@ public class tables {
        {
            con=(Connection) ConnectionProvider.getCon();
            st=con.createStatement();
-           st.executeUpdate("create table users("
-                   + "name varchar(200),"
-                   + "email varchar(200),"
-                   + "password varchar(50), "
-                   + "securityQuestion varchar(500),"
-                   + "answer varchar(200),"
-                   + "address varchar(200),"
-                   + "status varchar(200))");
+           //Bảng users
+//           st.executeUpdate("create table users("
+//                   + "name varchar(200),"
+//                   + "email varchar(200),"
+//                   + "password varchar(50), "
+//                   + "securityQuestion varchar(500),"
+//                   + "answer varchar(200),"
+//                   + "address varchar(200),"
+//                   + "status varchar(200))");
+            //Bảng room
+            st.executeUpdate("create table room("
+                    + "roomNo varchar(10),"
+                    + "roomType varchar(200),"
+                    + "bed varchar (200),"
+                    + "price int,"
+                    + "status varchar(200))");
            JOptionPane.showMessageDialog(null,"Table Created Successfully");
                           
         }

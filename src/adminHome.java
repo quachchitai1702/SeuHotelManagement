@@ -50,14 +50,12 @@ public class adminHome extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         jLabel1.setText("Welcome Admin!");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        logoutBtn.setBackground(new java.awt.Color(255, 204, 204));
+        logoutBtn.setBackground(new java.awt.Color(255, 255, 0));
         logoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        logoutBtn.setForeground(new java.awt.Color(255, 0, 0));
         logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logout.png"))); // NOI18N
         logoutBtn.setText("Logout");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -65,11 +63,10 @@ public class adminHome extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1014, 19, -1, -1));
+        getContentPane().add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 30, -1, -1));
 
-        exitBtn.setBackground(new java.awt.Color(255, 204, 204));
+        exitBtn.setBackground(new java.awt.Color(255, 255, 0));
         exitBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        exitBtn.setForeground(new java.awt.Color(255, 0, 0));
         exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -77,25 +74,24 @@ public class adminHome extends javax.swing.JFrame {
                 exitBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1152, 19, 111, -1));
+        getContentPane().add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 30, 111, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Search by name or email:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 78, 189, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 189, -1));
 
         searchTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(searchTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(466, 75, 344, -1));
+        getContentPane().add(searchTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 344, -1));
 
-        searchBtn.setBackground(new java.awt.Color(51, 51, 255));
+        searchBtn.setBackground(new java.awt.Color(255, 255, 204));
         searchBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
         searchBtn.setText("Search");
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 75, 75, -1));
+        getContentPane().add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 100, -1));
 
         clearBtn.setBackground(new java.awt.Color(255, 51, 51));
         clearBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -106,7 +102,7 @@ public class adminHome extends javax.swing.JFrame {
                 clearBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(clearBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1188, 75, 75, -1));
+        getContentPane().add(clearBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 100, 75, -1));
 
         showTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,13 +124,13 @@ public class adminHome extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(showTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 1243, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 1243, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/admin home.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
