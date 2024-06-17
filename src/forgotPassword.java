@@ -131,6 +131,11 @@ public class forgotPassword extends javax.swing.JFrame {
         loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, 75, -1));
 
         passwordTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -184,6 +189,8 @@ public class forgotPassword extends javax.swing.JFrame {
 
     private void signupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupBtnActionPerformed
         // TODO add your handling code here:
+        setVisible (false);
+        new signup().setVisible(true);
     }//GEN-LAST:event_signupBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
@@ -223,6 +230,12 @@ public class forgotPassword extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_saveBtnActionPerformed
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+        setVisible (false);
+        new login().setVisible(true);
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
