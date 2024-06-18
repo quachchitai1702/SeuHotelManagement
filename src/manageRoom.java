@@ -138,7 +138,7 @@ public class manageRoom extends javax.swing.JFrame {
         // TODO add your handling code here:addroom
         String roomNo=jTextField1.getText();
         String roomType=(String)jComboBox1.getSelectedItem();
-        String bed=(String)jComboBox1.getSelectedItem();
+        String bed=(String)jComboBox2.getSelectedItem();
         String price=jTextField2.getText();
         
         String Query="insert into room values('"+roomNo+"','"+roomType+"','"+bed+"','"+price+"','Not Booked')";
