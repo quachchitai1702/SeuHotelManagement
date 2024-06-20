@@ -20,7 +20,7 @@ import java.io.FileOutputStream;
  * @author ASUS
  */
 public class CustomerCheckOut extends javax.swing.JFrame {
-
+    private static CustomerCheckOut obj = null;
     /**
      * Creates new form CustomerCheckOut
      */
@@ -41,6 +41,12 @@ public class CustomerCheckOut extends javax.swing.JFrame {
     String bed;
     String roomNo;
 
+    public static CustomerCheckOut getObj(){
+        if (obj == null){
+            obj = new CustomerCheckOut();
+        } return obj;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
