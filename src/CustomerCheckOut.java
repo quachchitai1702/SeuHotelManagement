@@ -133,9 +133,6 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 "ID", "Name", "Mobile Number", "Nationality", "Gender", "Email", "ID Proof", "Address", "CheckIn Date", "Room Number", "Bed", "Room Type", "Price Per Day"
             }
         ));
-        jTable1.setColumnSelectionAllowed(false);
-        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTable1.setDoubleBuffered(true);
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 347, 950, 250));
@@ -153,7 +150,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("Custommer Mobile Phone");
+        jLabel6.setText("Customer Mobile Phone");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 120, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -261,7 +258,6 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 jTextField2.setText(rs.getString(2));
                 jTextField8.setText(rs.getString(3));
                 jTextField6.setText(rs.getString(9));
-                jTextField7.setText(rs.getString(13));
                 jTextField3.setText(rs.getString(13));
 
                 SimpleDateFormat myFormat = new SimpleDateFormat("yyyy/MM/dd");
