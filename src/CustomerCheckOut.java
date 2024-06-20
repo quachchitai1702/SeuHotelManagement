@@ -1,7 +1,14 @@
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import project.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -78,7 +85,6 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 150));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1000, 600));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -205,6 +211,11 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Check Out");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -237,6 +248,47 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String roomNo = jTextField1.getText();
+        try {
+            ResultSet rs = Select.getData("select * from customer where roomNo = '"+roomNo+"' and checkOut is NULL");
+            if (rs.next())
+            {
+                jTextField1.setEditable(false);
+                id = rs.getInt(1);
+                jTextField2.setText(rs.getString(2));
+                jTextField8.setText(rs.getString(3));
+                jTextField6.setText(rs.getString(9));
+                jTextField7.setText(rs.getString(13));
+                jTextField3.setText(rs.getString(10));
+
+                SimpleDateFormat myFormat = new SimpleDateFormat("yyyy/MM/dd");
+                Calendar cal = Calendar.getInstance();
+                jTextField7.setText(myFormat.format(cal.getTime()));
+
+                String dateBeforeString = rs.getString(9);
+                java.util.Date dateBefore = myFormat.parse(dateBeforeString);
+                String dateAfterString = myFormat.format(cal.getTime());
+                java.util.Date dateAfter = myFormat.parse(dateAfterString);
+                long difference = dateAfter.getTime() - dateBefore.getTime();
+                int noOfDayStay = (int) (difference/(1000*60*60*24));
+                if (noOfDayStay == 0)
+                    noOfDayStay = 1;
+                jTextField9.setText(String.valueOf(noOfDayStay));
+
+                float price = Float.parseFloat(jTextField3.getText());
+                jTextField10.setText(String.valueOf(noOfDayStay*price));
+
+                jTextField11.setText(rs.getString(6));
+                roomType = rs.getString(12);
+                bed = rs.getString(11);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Room number does not BOOKED or not EXIST");  
+            }
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
@@ -253,13 +305,13 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
-        ResultSet rs = Select.getData("select * from hotel.customer where checkOut is NULL");
+        ResultSet rs = Select.getData("select * from customer where checkOut is NULL");
         DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
         try {
             while (rs.next()){
                 model.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13)});
-                rs.close();
             }
+            rs.close();
         }
         catch(Exception e) {
             JOptionPane.showMessageDialog(null,e);
@@ -274,7 +326,83 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        new CustomerCheckOut().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        String name = jTextField2.getText();
+        String mobileNumber = jTextField8.getText();
+        String email = jTextField11.getText();
+        
+        String checkOut = jTextField7.getText();
+        String numOfDaysStay = jTextField9.getText();
+        String totalAmount = jTextField10.getText();
+        roomNo = jTextField1.getText();
+        
+        Query = "update customer set numberOfDaysStay='"+numOfDaysStay+"',totalAmount='"+totalAmount+"',checkOut='"+checkOut+"' where id='"+id+"'";
+        InsertUpdateDelete.setData(Query, "");
+        
+        Query = "update room set Status='Not Booked' where roomNo='"+roomNo+"'";
+        InsertUpdateDelete.setData(Query, "");
+        
+        String path = "D:\\";
+        
+        com.itextpdf.text.Document doc = new com.itextpdf.text.Document();
+        try {
+            PdfWriter.getInstance(doc, new FileOutputStream(path+""+id+".pdf"));
+            doc.open();
+            Paragraph paragraph1 = new Paragraph("Hotel Manangement System\n");
+            doc.add(paragraph1);
+            
+            Paragraph paragraph2 = new Paragraph("****************************************************************************************************************");
+            doc.add(paragraph2);
+            
+            Paragraph paragraph3 = new Paragraph("\tBill ID: "+id+"\nCustomer Details:\nName: "+name+"\nMobile Number: "+mobileNumber+"\nEmail: "+email+"\n");
+            doc.add(paragraph3);
+            
+            doc.add(paragraph2);
+            
+            Paragraph paragraph5 = new Paragraph("\tRoomDetails:\nNumber: "+jTextField1.getText()+"\nType: "+roomType+"\nBed: "+bed+"\nPrice Per Day: "+jTextField3.getText()+"");
+            doc.add(paragraph5);
+            
+            doc.add(paragraph2);
+            PdfPTable tb1 = new PdfPTable(4);
+            tb1.addCell("Check IN Date: "+jTextField6.getText());
+            tb1.addCell("Check OUT Date: "+checkOut);
+            tb1.addCell("No Of Days Stay: "+numOfDaysStay);
+            tb1.addCell("Total Amount Paid: "+totalAmount);
+            doc.add(tb1);
+            doc.add(paragraph2);
+            
+            Paragraph paragraph6 = new Paragraph("Thank you, Please Visit Again.\n");
+            doc.add(paragraph6);
+                    
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        doc.close();
+        int a = JOptionPane.showConfirmDialog(null,"Do you want to print bill","Select",JOptionPane.YES_NO_OPTION);
+        if (a==0){
+            try{
+                if((new File("D:\\"+id+".pdf")).exists()){
+                    Process p = Runtime
+                            .getRuntime()
+                            .exec("rundll32 url.dll,FileProtocolHandler D:\\" +id+ ".pdf");
+                }
+                else {
+                    System.out.println("File is not exists");
+                }
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null,e);
+            }
+        }
+        setVisible(false);
+        new CustomerCheckOut().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
