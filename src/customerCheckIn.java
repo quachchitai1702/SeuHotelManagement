@@ -87,11 +87,9 @@ public class customerCheckIn extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(50, 118));
-        setPreferredSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Registration & Check IN.png"))); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel1.setText("CUSTOMER CHECK IN");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 22, -1, -1));
 
@@ -197,9 +195,8 @@ public class customerCheckIn extends javax.swing.JFrame {
         jTextField9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 354, 250, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 204));
+        jButton1.setBackground(new java.awt.Color(255, 255, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Allote Room");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,9 +205,8 @@ public class customerCheckIn extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 396, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 204));
+        jButton2.setBackground(new java.awt.Color(255, 255, 102));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 204, 204));
         jButton2.setText("Clear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
