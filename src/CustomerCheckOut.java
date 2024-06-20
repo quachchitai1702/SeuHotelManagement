@@ -84,7 +84,9 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 150));
+        setMinimumSize(new java.awt.Dimension(995, 599));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(995, 599));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -125,15 +127,15 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Name", "Mobile Number", "Nationality", "Gender", "Email", "ID Proof", "Address", "CheckIn Date", "Room Number", "Bed", "Room Type", "Price Per Day"
             }
         ));
+        jTable1.setColumnSelectionAllowed(false);
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTable1.setDoubleBuffered(true);
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 347, 950, 250));
@@ -237,7 +239,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 610));
+        jLabel11.setText("jLabel11");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -259,7 +262,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 jTextField8.setText(rs.getString(3));
                 jTextField6.setText(rs.getString(9));
                 jTextField7.setText(rs.getString(13));
-                jTextField3.setText(rs.getString(10));
+                jTextField3.setText(rs.getString(13));
 
                 SimpleDateFormat myFormat = new SimpleDateFormat("yyyy/MM/dd");
                 Calendar cal = Calendar.getInstance();
