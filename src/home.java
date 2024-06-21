@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 import javax.swing.JOptionPane;
 import project.*;
 import java.sql.*;
+
 /**
  *
  * @author ASUS
@@ -152,6 +154,8 @@ public class home extends javax.swing.JFrame {
         new customerDetailsBill().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -187,6 +191,8 @@ public class home extends javax.swing.JFrame {
         });
     }
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitBtn;
     private javax.swing.JButton jButton1;
