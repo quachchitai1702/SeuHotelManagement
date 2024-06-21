@@ -54,7 +54,7 @@ public class adminHome extends javax.swing.JFrame {
         jLabel1.setText("Welcome Admin!");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        logoutBtn.setBackground(new java.awt.Color(255, 255, 0));
+        logoutBtn.setBackground(new java.awt.Color(255, 255, 102));
         logoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logout.png"))); // NOI18N
         logoutBtn.setText("Logout");
@@ -65,7 +65,7 @@ public class adminHome extends javax.swing.JFrame {
         });
         getContentPane().add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 30, -1, -1));
 
-        exitBtn.setBackground(new java.awt.Color(255, 255, 0));
+        exitBtn.setBackground(new java.awt.Color(255, 255, 102));
         exitBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         exitBtn.setText("Exit");
@@ -78,7 +78,7 @@ public class adminHome extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Search by name or email:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 189, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 189, -1));
 
         searchTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(searchTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 344, -1));
@@ -93,9 +93,8 @@ public class adminHome extends javax.swing.JFrame {
         });
         getContentPane().add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 100, -1));
 
-        clearBtn.setBackground(new java.awt.Color(255, 51, 51));
+        clearBtn.setBackground(new java.awt.Color(255, 255, 204));
         clearBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        clearBtn.setForeground(new java.awt.Color(255, 255, 255));
         clearBtn.setText("Clear");
         clearBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

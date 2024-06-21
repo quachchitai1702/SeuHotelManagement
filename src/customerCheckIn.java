@@ -198,7 +198,7 @@ public class customerCheckIn extends javax.swing.JFrame {
         jTextField9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 354, 250, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 102));
+        jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jButton1.setText("Allote Room");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +208,7 @@ public class customerCheckIn extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 396, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 102));
+        jButton2.setBackground(new java.awt.Color(255, 255, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jButton2.setText("Clear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {

@@ -119,6 +119,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 57, 130, -1));
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Search");
         jButton2.setToolTipText("");
@@ -212,6 +213,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         jLabel10.setText("Email");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 155, -1));
 
+        jButton3.setBackground(new java.awt.Color(255, 255, 204));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Check Out");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -221,6 +223,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
+        jButton4.setBackground(new java.awt.Color(255, 255, 204));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("Clear");
         jButton4.addActionListener(new java.awt.event.ActionListener() {

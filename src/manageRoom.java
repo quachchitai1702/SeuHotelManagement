@@ -110,7 +110,7 @@ public class manageRoom extends javax.swing.JFrame {
         jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 333, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 102));
+        jButton2.setBackground(new java.awt.Color(255, 255, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jButton2.setText("Add Room");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
