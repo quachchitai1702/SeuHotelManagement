@@ -76,6 +76,11 @@ public class home extends javax.swing.JFrame {
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Detals Bill.png"))); // NOI18N
         jButton4.setText("Details Bill");
         jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 190, 60));
 
         logoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -141,6 +146,11 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
         CustomerCheckOut.getObj().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        new customerDetailsBill().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
