@@ -12,7 +12,7 @@ import project.*;
  * @author dieut
  */
 public class customerCheckIn extends javax.swing.JFrame {
-
+    private static customerCheckIn obj = null;
     /**
      * Creates new form customerCheckIn
      */
@@ -24,6 +24,13 @@ public class customerCheckIn extends javax.swing.JFrame {
         Calendar cal = Calendar.getInstance();
         jTextField7.setText(myFormat.format(cal.getTime()));
     }
+    
+    public static customerCheckIn getObj(){
+        if (obj == null){
+            obj = new customerCheckIn();
+        } return obj;
+    }
+    
     String bed;
     String roomType;
     String roomNo;
@@ -45,6 +52,8 @@ public class customerCheckIn extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    
 
     
     /**
@@ -86,14 +95,18 @@ public class customerCheckIn extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(50, 118));
+        setLocation(new java.awt.Point(350, 150));
+        setMinimumSize(new java.awt.Dimension(995, 599));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(995, 599));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel1.setText("CUSTOMER CHECK IN");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Registration & Check IN.png"))); // NOI18N
+        jLabel1.setText("Customer Check In");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 22, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -224,10 +237,10 @@ public class customerCheckIn extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(958, 6, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, -1, -1));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 510));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
         pack();
         setLocationRelativeTo(null);
@@ -381,7 +394,7 @@ public class customerCheckIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

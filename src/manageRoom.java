@@ -13,12 +13,18 @@ import javax.swing.table.DefaultTableModel;
  * @author ASUS
  */
 public class manageRoom extends javax.swing.JFrame {
-
+    private static manageRoom obj = null;
     /**
      * Creates new form manageRoom
      */
     public manageRoom() {
         initComponents();
+    }
+    
+    public static manageRoom getObj(){
+        if (obj == null){
+            obj = new manageRoom();
+        } return obj;
     }
 
     /**
@@ -56,6 +62,7 @@ public class manageRoom extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/manage room.png"))); // NOI18N
         jLabel1.setText("Manage Room");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 

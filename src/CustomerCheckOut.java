@@ -35,17 +35,20 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         jTextField8.setEditable(false);
         jTextField9.setEditable(false);
     }
+    
+    public static CustomerCheckOut getObj(){
+        if (obj == null){
+            obj = new CustomerCheckOut();
+        } return obj;
+    }
+    
     int id=0;
     String Query;
     String roomType;
     String bed;
     String roomNo;
 
-    public static CustomerCheckOut getObj(){
-        if (obj == null){
-            obj = new CustomerCheckOut();
-        } return obj;
-    }
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -109,6 +112,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1235, 6, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Check Out.png"))); // NOI18N
         jLabel2.setText("Customer Check Out");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 16, 330, 38));
 
@@ -140,7 +144,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 347, 950, 250));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 347, 950, 230));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Customer Name");
@@ -244,7 +248,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
         jLabel11.setText("jLabel11");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 600));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -406,8 +410,17 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,e);
             }
         }
+
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField10.setText("");
+        jTextField11.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
+        
         setVisible(false);
-        new CustomerCheckOut().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

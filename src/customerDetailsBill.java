@@ -15,7 +15,7 @@ import project.*;
  * @author dieut
  */
 public class customerDetailsBill extends javax.swing.JFrame {
-
+    private static customerDetailsBill obj = null;
     /**
      * Creates new form customerDetailsBill
      */
@@ -24,6 +24,12 @@ public class customerDetailsBill extends javax.swing.JFrame {
         SimpleDateFormat myFormat = new SimpleDateFormat("yyyy/MM/dd");
         Calendar cal = Calendar.getInstance();
         jTextField1.setText(myFormat.format(cal.getTime()));
+    }
+    
+    public static customerDetailsBill getObj(){
+        if (obj == null){
+            obj = new customerDetailsBill();
+        } return obj;
     }
 
     /**
@@ -45,8 +51,10 @@ public class customerDetailsBill extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(50, 118));
+        setLocation(new java.awt.Point(350, 150));
+        setMinimumSize(new java.awt.Dimension(995, 599));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(995, 599));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -65,7 +73,7 @@ public class customerDetailsBill extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(958, 6, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Search By Check OUT Date");
@@ -106,7 +114,7 @@ public class customerDetailsBill extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 139, 937, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
