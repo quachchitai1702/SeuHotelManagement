@@ -1,6 +1,9 @@
 
 import javax.swing.JOptionPane;
 import project.InsertUpdateDelete;
+import java.sql.*;
+import project.Select;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -221,24 +224,52 @@ public class signup extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String name=jTextField1.getText();
-        String email=jTextField2.getText();
-        String password=jPasswordField1.getText();
-        String securityQuestion=(String) jComboBox1.getSelectedItem();
-        String answer=jTextField3.getText();
-        String address=jTextField4.getText();
-        if(name.equals("") || email.equals("") || password.equals("") || answer.equals("") || address.equals(""))
-            JOptionPane.showMessageDialog(null,"Every Field Is Required");
-        else
-        {
-            String Query;
-            Query="insert into users values('"+name+"','"+email+"','"+password+"','"+securityQuestion+"','"+answer+"','"+address+"','false')";
-            InsertUpdateDelete.setData(Query, "Resgister Successfully");
-            setVisible(false);
-            new signup().setVisible(true);
+        String name = jTextField1.getText();
+    String email = jTextField2.getText();
+    String password = jPasswordField1.getText();
+    String securityQuestion = (String) jComboBox1.getSelectedItem();
+    String answer = jTextField3.getText();
+    String address = jTextField4.getText();
+
+    
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty() || answer.isEmpty() || address.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Every field is required");
+        } else if (!isValidEmail(email)) {
+            JOptionPane.showMessageDialog(null, "Invalid email format");
+        } else {
+            if (isEmailRegistered(email)) {
+                JOptionPane.showMessageDialog(null, "Email has already been used");
+            } else {
+                String query = "INSERT INTO users VALUES ('" + name + "','" + email + "','" + password + "','" + securityQuestion + "','" + answer + "','" + address + "','false')";
+                InsertUpdateDelete.setData(query, "Registered Successfully");
+                setVisible(false);
+                new login().setVisible(true);
+            }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+//định dạng email
+    private boolean isValidEmail(String email) {
+    String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@gmail\\.com$";
+    return email.matches(emailRegex);
+    }
+    
+    private boolean isEmailRegistered(String email) {
+    boolean emailExists = false;
+    try {
+        ResultSet rs = Select.getData("select * from users where email='" + email + "'");
+        if (rs != null && rs.next()) {
+            emailExists = true;
+        }
+        if (rs != null) {
+            rs.close();
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+    }
+    return emailExists;
+}
+    
+    
     /**
      * @param args the command line arguments
      */

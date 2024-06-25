@@ -123,7 +123,7 @@ public class adminHome extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(showTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 1243, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 1243, 540));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/admin home.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));

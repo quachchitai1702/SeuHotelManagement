@@ -220,7 +220,7 @@ public class forgotPassword extends javax.swing.JFrame {
                     check=1;
                     InsertUpdateDelete.setData("update users set password='"+newPassword+"' where email='"+email+"'", "Password Set Successfully");
                     setVisible(false);
-                    new forgotPassword().setVisible(true);
+                    new login().setVisible(true);
                     
                 }
             }
