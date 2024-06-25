@@ -54,7 +54,7 @@ public class customerDetailsBill extends javax.swing.JFrame {
         setLocation(new java.awt.Point(350, 150));
         setMinimumSize(new java.awt.Dimension(995, 599));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(995, 599));
+        setPreferredSize(new java.awt.Dimension(1020, 599));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -63,7 +63,6 @@ public class customerDetailsBill extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Detals Bill.png"))); // NOI18N
         jLabel1.setText("Customer Details Bill");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 15, -1, -1));
 
@@ -73,7 +72,7 @@ public class customerDetailsBill extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Search By Check OUT Date");
@@ -114,7 +113,7 @@ public class customerDetailsBill extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 139, 937, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

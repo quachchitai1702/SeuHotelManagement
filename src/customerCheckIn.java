@@ -101,11 +101,10 @@ public class customerCheckIn extends javax.swing.JFrame {
         setLocation(new java.awt.Point(350, 150));
         setMinimumSize(new java.awt.Dimension(995, 599));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(995, 599));
+        setPreferredSize(new java.awt.Dimension(1020, 599));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Registration & Check IN.png"))); // NOI18N
         jLabel1.setText("Customer Check In");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 22, -1, -1));
 
@@ -237,13 +236,12 @@ public class customerCheckIn extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 600));
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

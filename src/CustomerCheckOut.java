@@ -95,7 +95,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         setLocation(new java.awt.Point(350, 150));
         setMinimumSize(new java.awt.Dimension(995, 599));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(995, 599));
+        setPreferredSize(new java.awt.Dimension(1020, 600));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -112,7 +112,6 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1235, 6, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Check Out.png"))); // NOI18N
         jLabel2.setText("Customer Check Out");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 16, 330, 38));
 
@@ -244,11 +243,11 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, -1, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
         jLabel11.setText("jLabel11");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 600));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
