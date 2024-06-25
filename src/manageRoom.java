@@ -147,10 +147,39 @@ public class manageRoom extends javax.swing.JFrame {
         String bed=(String)jComboBox2.getSelectedItem();
         String price=jTextField2.getText();
         
-        String Query="insert into room values('"+roomNo+"','"+roomType+"','"+bed+"','"+price+"','Not Booked')";
-        InsertUpdateDelete.setData(Query, "Successfully Updated");
-        setVisible(false);
-        new manageRoom().setVisible(true);
+         Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
+    
+    try {
+        con = ConnectionProvider.getCon();
+        st = con.createStatement();
+        // Kiểm tra xem phòng đã tồn tại chưa
+        String checkQuery = "SELECT roomNo FROM room WHERE roomNo='" + roomNo + "'";
+        rs = st.executeQuery(checkQuery);
+        
+        if (rs.next()) {
+            // Nếu phòng đã tồn tại
+            JOptionPane.showMessageDialog(null, "Room already exists");
+        } else {
+            // Thêm phòng mới
+            String insertQuery = "INSERT INTO room VALUES('" + roomNo + "','" + roomType + "','" + bed + "','" + price + "','Not Booked')";
+            InsertUpdateDelete.setData(insertQuery, "Successfully Updated");
+            setVisible(false);
+            new manageRoom().setVisible(true);
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e.getMessage());
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (st != null) st.close();
+            if (con != null) con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
