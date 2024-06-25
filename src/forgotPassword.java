@@ -172,7 +172,7 @@ public class forgotPassword extends javax.swing.JFrame {
         }
         else
         {
-            ResultSet rs = Select.getData("select *from users where email='"+email+"  '");
+            ResultSet rs = Select.getData("select *from users where email='"+email+"'");
             try 
             {
                 if (rs.next())
@@ -229,7 +229,7 @@ public class forgotPassword extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, e);
             }
         }   
-        if (check==0)
+        if (check==0) 
         {
             JOptionPane.showMessageDialog(null, "Incorrect Answer ");
         }
